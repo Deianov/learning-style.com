@@ -1,0 +1,2 @@
+import {Country, factory} from './../app.js';
+const PATH_RESOURCES_MAPS="./components/maps/";class Maps{parent;constructor(e){this.parent=e}async render(e){const r=e.props,{resource:t,resource_full:o}=r;if(!t)return void console.log("Not found key [resource] in props.");const n=new Country(this.parent),s=await factory.importResource(PATH_RESOURCES_MAPS,t);if(await n.render(s.lands),n.renderInfo(s.meta),o){const e=await factory.importResource(PATH_RESOURCES_MAPS,o);n.meta=e.lands.meta}}reset(){this.parent.innerHTML=""}}export default Maps;
